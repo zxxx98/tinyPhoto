@@ -7,8 +7,8 @@ import { observer } from 'mobx-react-lite';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Dimensions, Pressable, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
-import UploadModal from '../components/UploadModal';
 import { clearUploadNotification, initNotificationChannel, showOrUpdateUploadNotification } from '../utils/notification';
+import UploadModal from './UploadModal';
 
 export default observer(function GalleryDetailScreen({ route }: any) {
   const { galleryName } = route.params;

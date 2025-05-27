@@ -25,7 +25,6 @@ export function showOrUpdateUploadNotification(current: number, total: number) {
     id: String(uploadNotificationId),
     title: '照片正在上传',
     message: `已完成 ${current}/${total} (${percent}%)`,
-    progress: percent,
     onlyAlertOnce: true,
     ongoing: true,
     importance: 'high',
@@ -43,4 +42,12 @@ export function clearUploadNotification() {
     PushNotification.cancelLocalNotifications({ id: String(uploadNotificationId) });
     uploadNotificationId = null;
   }
-} 
+}
+
+const NotificationUtils = {
+  initNotificationChannel,
+  showOrUpdateUploadNotification,
+  clearUploadNotification,
+};
+
+export default NotificationUtils; 
